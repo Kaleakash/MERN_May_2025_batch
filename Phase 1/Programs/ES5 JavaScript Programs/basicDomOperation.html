@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function readAndUpdateData() {
+            //alert("event fired")
+            // reading text field value using name attribute 
+            //var name = document.getElementsByName("fname")[0].value;
+            //alert("Your name is "+name)
+
+            // reading the text field value using id attribute 
+            // var name = document.getElementById("n1").value
+            // alert("Your name is "+name)
+
+            // combine fname and lname and display in 3rd text field 
+            var fname = document.getElementById("n1").value;
+            var lname = document.getElementById("n2").value 
+            var fullname = fname+" "+lname;
+            document.getElementById("n3").value=fullname
+            document.getElementById("n1").value=""
+            document.getElementById("n2").value=""
+            document.getElementById("output").innerHTML=fullname
+            var h1TagValue = document.getElementsByTagName("h1")[0].innerHTML;
+            alert(h1TagValue)
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to DOM Operation</h1>
+    FName :<input type="text" name="fname" id="n1"/><br/>
+    LName :<input type="text" name="lname" id="n2"/><br/>
+    Full Name :<input type="text" name="fullname" id="n3" readonly/><br/>
+    <div id="output"></div>
+
+    <br/>
+    <input type="button" value="Click Here" onclick="readAndUpdateData()"/>
+</body>
+</html>
