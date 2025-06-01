@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function info() {
+            alert("Event fired...single click")
+        }
+         function info1() {
+            alert("Event fired...double click")
+        }
+        function abc() {
+            console.log("onKeyDown fired...")
+        }
+         function xyz() {
+            console.log("onKeyup fired...")
+        }
+    </script>
+</head>
+<body>
+    <h2>Event Handling Example</h2>
+    <input type="button" value="Click Here!" onclick="info()"/><br/>
+    <input type="button" value="Click Here!" ondblclick="info1()"/><br/>
+    <input type="text" onkeydown="abc()" onkeyup="xyz()"/>
+</body>
+</html>
