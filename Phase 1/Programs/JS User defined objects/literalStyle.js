@@ -1,4 +1,5 @@
 let product1 ={pid:100,pname:"TV",price:56000} // Object Literal    : it contains only property no function 
+let product2 ={id:100,name:"TV",amount:56000} // Object Literal    : it contains only property no function 
 document.writeln("Object creation in literal style<br/>")
 document.writeln("PId is "+product1.pid+"<br/>")
 document.writeln("PName is "+product1.pname+"<br/>")
