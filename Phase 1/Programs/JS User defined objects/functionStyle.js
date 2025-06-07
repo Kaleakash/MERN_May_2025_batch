@@ -25,7 +25,7 @@
 
 // product1.displayProduct();
 
-// creating product object using parameterized constructor style
+// creating product object using parameterized constructor style in function 
 
 
 
