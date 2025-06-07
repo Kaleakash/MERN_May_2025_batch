@@ -7,6 +7,7 @@ function display1() {
 display1();
 // expression style function 
 //display2();             // it doesn't support JS hosting features 
+
 let display2 = function() {
     console.log("Expression style function")
 }
