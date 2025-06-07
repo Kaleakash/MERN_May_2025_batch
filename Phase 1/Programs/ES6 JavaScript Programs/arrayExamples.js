@@ -1,5 +1,5 @@
-let num1=[10,20,30,40,50,60];
-let num2 = new Array(10,20,30,40,50,60);
+let num1=[10,20,30,40,50,60];   // creating literal style 
+let num2 = new Array(10,20,30,40,50,60);// creating array using new keyword
 document.writeln(num1)      // it display output as string format separated by ,
 document.writeln("<br/>")
 document.writeln(num2) 
