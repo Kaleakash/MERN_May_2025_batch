@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       #header {
+        background-color: lightblue;
+        border: 1px solid blue;
+        padding: 10px;
+        text-align: center;
+       }
+       #nav {
+        background-color: lightgreen;
+        border: 1px solid green;
+        padding: 10px;
+        text-align: center;
+       }
+       #footer {
+        background-color: lightblue;
+        border: 1px solid blue;
+        padding: 10px;
+        text-align: center;
+       }
+       #main{
+        background-color: lightyellow;
+        border: 1px solid yellow;
+        padding: 10px;
+        text-align: center;
+       }
+       span {
+        color: red;
+       }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h2>This is header part</h2>
+    </header>
+    <nav id="nav">
+        This is navigation part
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="main">
+        This is is actual contents
+        <main>
+            This is main contents of the page.
+            <article>
+                <h3>Article Title</h3>
+                <p>This is an article within the main content.</p>
+            </article>
+            <aside>
+                <h4>Related Links</h4>
+                <ul>
+                    <li><a href="#"><span>Related</span> Link 1</a></li>
+                    <li><a href="#">Related Link 2</a></li>
+                </ul>
+            </aside>
+        </main>
+    </section>
+    <footer id="footer">
+        This is footer part
+    </footer>
+</body>
+</html>
