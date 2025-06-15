@@ -1,5 +1,6 @@
 import ArrayStateComponent from "./ArrayStateComponent";
 import EmployeeObjectComponent from "./EmployeeObjectComponent";
+import Products from "./Products";
 import StateComponent from "./StateComponent";
 
 
@@ -9,7 +10,8 @@ function App() {
       <h3>React State variable Example</h3>
       {/* <StateComponent/> */}
       {/* <ArrayStateComponent/> */}
-      <EmployeeObjectComponent/>
+      {/* <EmployeeObjectComponent/> */}
+      <Products></Products>
     </div>
   );
 }
