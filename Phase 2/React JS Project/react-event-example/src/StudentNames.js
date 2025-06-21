@@ -24,8 +24,8 @@ let addNames=()=> {
             <h5>Add and Display Student Names</h5>
             <ul>
             {
-                stdNames.map((name) => {
-                    return <li>{name}</li>
+                stdNames.map((name,index) => {
+                    return <li key={index}>{index }--){name}</li>
                 })
             }
             </ul>
