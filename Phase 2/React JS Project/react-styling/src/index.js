@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+// got the reference of div tag with id as root 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// send the virtual DOM code to actual dom using App component 
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+<App /> 
 );
 
 // If you want to start measuring performance in your app, pass a function
