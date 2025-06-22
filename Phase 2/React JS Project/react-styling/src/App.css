@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.MyClass{
+  background-color: yellowgreen;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
