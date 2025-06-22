@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <h3>Login page without Grid Layout</h3>
     <form class="form-group">
         <label>EmailId</label>
         <input type="email" name="emailid" class="form-control"/><br/>
@@ -18,6 +19,25 @@
         <input type="submit" value="submit" class="btn btn-success"/>
         <input type="reset" value="reset" class="btn btn-info"/>
     </form>
+    </div>
+    <hr/>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"><label>EmailId</label></div>
+            <div class="col-2"><input type="email" name="emailid" class="form-control"/></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"><label>Password</label></div>
+            <div class="col-2"> <input type="password" name="password" class="form-control"/></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"><input type="submit" value="submit" class="btn btn-success"/></div>
+            <div class="col-2"><input type="reset" value="reset" class="btn btn-info"/></div>
+        </div>
+
+        
     </div>
 </body>
 </html>
