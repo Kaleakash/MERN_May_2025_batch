@@ -3,7 +3,6 @@ import axios from 'axios';
 function TodosComponent() {
 let URL ="https://dummyjson.com/todos";
 let [todos,setTodos]=useState([])
-
 let loadAllTodoesDetails = ()=> {
     //alert("event fired")
    // axios.get(URL).then(result=>console.log(result)).catch(error=>console.log(error)) // it provide header as well as body part 
@@ -13,8 +12,8 @@ let loadAllTodoesDetails = ()=> {
 }
     return(
         <div>
+            {loadAllTodoesDetails()}
             <h2>All Todos Details</h2>
-            <input type="button" value="Load Data" onClick={loadAllTodoesDetails}/>
             <hr/>
             {
               todos.map(t=>
@@ -24,5 +23,4 @@ let loadAllTodoesDetails = ()=> {
         </div>
     )
 }
-
 export default TodosComponent;
