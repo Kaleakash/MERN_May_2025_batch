@@ -1,10 +1,7 @@
 import { useState } from "react";
-
 function MealsComponent() {
-
 let URL ="https://www.themealdb.com/api/json/v1/1/search.php?s=";   // local variable 
-let [meals,setMeals]=useState([{}]);        // state variable 
-
+let [meals,setMeals]=useState([]);        // state variable 
 let loadMealsData=()=> {
     fetch(URL).then(response=>response.json()).
     then(result=>setMeals(result.meals)).catch(error=>console.log(error))
