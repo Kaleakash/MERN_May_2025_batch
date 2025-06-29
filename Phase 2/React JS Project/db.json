@@ -1,19 +1,14 @@
 {
   "employees": [
     {
-      "id": "fb2c",
-      "name": "Raj",
-      "salary": "48000"
+      "id": "81b5",
+      "name": "Lex",
+      "salary": "52000"
     },
     {
-      "id": "0d81",
-      "name": "Bob Patel",
-      "salary": "28000"
-    },
-    {
-      "id": "a5e3",
-      "name": "Alice",
-      "salary": "56000"
+      "id": "dd65",
+      "name": "John",
+      "salary": "45000"
     }
   ]
 }
