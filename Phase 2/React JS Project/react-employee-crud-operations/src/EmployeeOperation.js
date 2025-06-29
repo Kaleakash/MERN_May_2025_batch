@@ -32,8 +32,6 @@ let storeOrUpdateEmployee=(event)=> {
     }).catch(error=>console.log(error));
 
     }
-    
-
     setEmployee({name:"",salary:""})
 }
 let deleteEmployee = (event,id)=>{
