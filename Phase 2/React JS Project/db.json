@@ -1,3 +1,19 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "id": "fb2c",
+      "name": "Raj",
+      "salary": "48000"
+    },
+    {
+      "id": "0d81",
+      "name": "Bob Patel",
+      "salary": "28000"
+    },
+    {
+      "id": "a5e3",
+      "name": "Alice",
+      "salary": "56000"
+    }
+  ]
 }
