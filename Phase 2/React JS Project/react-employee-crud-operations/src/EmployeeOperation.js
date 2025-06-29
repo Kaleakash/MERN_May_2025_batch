@@ -23,6 +23,15 @@ let storeEmployee=(event)=> {
 
     setEmployee({name:"",salary:""})
 }
+let deleteEmployee = (event,id)=>{
+    //alert("id is "+id)
+    // delete function we need pass the id using technique path param means append id through URL as
+    // URL/abc123
+    setMessage("");
+    axios.delete(URL+"/"+id).then(result=>{
+            setMessage(result.statusText);      // when record store msg value change       
+    }).catch(error=>console.log(error));
+}
     return(
         <div>
             <span style={{"color":"red"}}>{msg}</span>
@@ -47,6 +56,7 @@ let storeEmployee=(event)=> {
                         <th>Id</th>
                         <th>Name</th>
                         <th>Salary</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +65,9 @@ let storeEmployee=(event)=> {
                                 <tr key={employee.id}>
                                     <td>{employee.id}</td>
                                     <td>{employee.name}</td>
-                                    <td>{employee.salary}</td>      
+                                    <td>{employee.salary}</td>  
+                        <td><input type="button" value="Delete" 
+                        onClick={(event)=>deleteEmployee(event,employee.id)}/></td>    
                                 </tr>
                             )
                         }
