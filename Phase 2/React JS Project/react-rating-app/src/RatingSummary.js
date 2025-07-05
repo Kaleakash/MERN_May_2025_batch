@@ -5,7 +5,10 @@ function RatingSummary(props) {
         <div>
             <h4>Your rating details</h4>
             {
-            props.rating>0?<p>{props.rating}</p>:"No Rating given yet"      
+            // props.rating>0?<p>{props.rating}</p>:"No Rating given yet"       
+    props.rating>0?
+    "*".repeat(props.rating)
+    :"No Rating given yet" 
             }
         </div>
     )
