@@ -16,6 +16,10 @@ function reducer(state=initialState,action){
     if(action.type=="DECREMENT"){
     return {...state, n: state.n - 1 }; // increment n by 1
     }
+    if(action.type=="DYNAMIC_INCREMENT"){
+       
+        return {...state, n: state.n + action.payload}; // increment n by num
+    }
     return state;
 }
 

@@ -1,4 +1,5 @@
 import DecrementComponent from './DecrementComponent';
+import DynamicIncrement from './DynamicIncrement';
 import FirstComponent from './FirstComponent';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <h2>React with Redux Simple Application!</h2>
       <FirstComponent />
       <DecrementComponent/>
+      <DynamicIncrement/>
     </div>
   );
 }
