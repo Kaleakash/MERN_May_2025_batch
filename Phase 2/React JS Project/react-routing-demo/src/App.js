@@ -7,6 +7,8 @@ import ContactUs from './ContactUs';
 import NotFound from './NotFound';
 import Dashboard from './Dashboard';
 import PrivateRouter from './PrivateRouter';
+import AddEmployee from './AddEmployee';
+import ViewEmployee from './ViewEmployee';
 
 function App() {
   return (
@@ -19,17 +21,36 @@ function App() {
     </nav>
     <hr/>
 
-    <Routes>
+    {/* <Routes>
       <Route path='' element={<Login/>}></Route>
       <Route path='/about_us' element={<AboutUs/>}></Route>
       <Route path='/contact_us' element={<ContactUs/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/home' element={
         <PrivateRouter>
-          <Dashboard/>
+        <Routes>
+        <Route path='/' element={<Dashboard/>}>
+        <Route path="/home/add_employee" element={<AddEmployee/>}></Route>
+        <Route path="/home/view_employee" element={<ViewEmployee/>}></Route>
+        </Route>
+        </Routes>
         </PrivateRouter>
       }></Route>
-      <Route path="*" element={<NotFound/>}></Route>
+
+            
+    </Routes> */}
+
+    <Routes>
+      <Route path='' element={<Login/>}></Route>
+      <Route path='/about_us' element={<AboutUs/>}></Route>
+      <Route path='/contact_us' element={<ContactUs/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/home' element={<Dashboard/>}>
+        <Route path="add_employee" element={<AddEmployee/>}></Route>
+        <Route path="view_employee" element={<ViewEmployee/>}></Route>
+      </Route>
+
+    
     </Routes>
     </div>
   );
