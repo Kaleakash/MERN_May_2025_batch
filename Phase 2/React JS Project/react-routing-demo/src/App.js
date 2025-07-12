@@ -20,26 +20,24 @@ function App() {
       <Link to="login">Login</Link> 
     </nav>
     <hr/>
-
-    {/* <Routes>
+    {/* with Private router with nested routing features code */}
+    <Routes>
       <Route path='' element={<Login/>}></Route>
       <Route path='/about_us' element={<AboutUs/>}></Route>
       <Route path='/contact_us' element={<ContactUs/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/home' element={
         <PrivateRouter>
-        <Routes>
-        <Route path='/' element={<Dashboard/>}>
+            <Dashboard/>
+        </PrivateRouter>
+      }>
         <Route path="/home/add_employee" element={<AddEmployee/>}></Route>
         <Route path="/home/view_employee" element={<ViewEmployee/>}></Route>
-        </Route>
-        </Routes>
-        </PrivateRouter>
-      }></Route>
+      </Route>
+    </Routes>
 
-            
-    </Routes> */}
-
+          {/* without Private router with nested routing features code */}
+    {/* 
     <Routes>
       <Route path='' element={<Login/>}></Route>
       <Route path='/about_us' element={<AboutUs/>}></Route>
@@ -49,9 +47,8 @@ function App() {
         <Route path="add_employee" element={<AddEmployee/>}></Route>
         <Route path="view_employee" element={<ViewEmployee/>}></Route>
       </Route>
-
-    
-    </Routes>
+    </Routes> 
+    */}
     </div>
   );
 }
