@@ -8,6 +8,7 @@ let handleLogin= (event)=> {
     event.preventDefault();
     // checking emailId and password manually or we can check using axios or fetch from json or backend technologies. 
     if(login.emailId==="admin@gmail.com" && login.password==="admin@123"){
+        sessionStorage.setItem("user","admin@gmail.com");   
         alert("successfully login")
         navigate("/home");
     }else {

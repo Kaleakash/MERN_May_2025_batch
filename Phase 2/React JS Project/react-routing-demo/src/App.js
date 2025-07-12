@@ -6,6 +6,7 @@ import Login from './Login';
 import ContactUs from './ContactUs';
 import NotFound from './NotFound';
 import Dashboard from './Dashboard';
+import PrivateRouter from './PrivateRouter';
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
       <Route path='/about_us' element={<AboutUs/>}></Route>
       <Route path='/contact_us' element={<ContactUs/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
-      <Route path='/home' element={<Dashboard/>}></Route>
+      <Route path='/home' element={
+        <PrivateRouter>
+          <Dashboard/>
+        </PrivateRouter>
+      }></Route>
       <Route path="*" element={<NotFound/>}></Route>
     </Routes>
     </div>
