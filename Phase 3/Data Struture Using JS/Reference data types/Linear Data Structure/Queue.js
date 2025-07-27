@@ -1,8 +1,7 @@
 class Queue {
     constructor() { // this.variable names means that variable is a part of that object ie instance variable. 
         this.queue = [];            // queue is array type 
-    }
-  
+    } 
     size() {
         return this.queue.length;       // length pre defined property to check the size 
     }
