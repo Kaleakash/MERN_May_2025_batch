@@ -16,7 +16,7 @@ class Tree {
         console.log(" ".repeat(this.temp)+""+node.value)
         for(let cc of node.children){
             //this.display(child);
-            this.temp++;
+            this.temp=node.children.length;
             //console.log(cc.root)
             this.display(cc.root)
         }
