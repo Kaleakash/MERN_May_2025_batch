@@ -56,7 +56,7 @@ function merge(leftArray, rightArray) {
         leftIndex++;
         console.log("left index position "+leftIndex);
     }
-    // // If there are remaining elements in the right array
+    // If there are remaining elements in the right array
     while(rightIndex < rightArray.length) {
         result.push(rightArray[rightIndex]);
         console.log("right Array Element in false "+rightArray[rightIndex]);
