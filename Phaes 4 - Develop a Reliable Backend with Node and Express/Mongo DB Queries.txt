@@ -24,6 +24,7 @@ db.Students.updateMany({sname:"John"},{$pull:{skillset:"React JS"}});
 
 
 Embedded Style relationship 
+
 inside one document we are storing another document 
 
 db.EmployeeInfo.insertOne(
@@ -51,8 +52,72 @@ db.EmployeeInfo.find({"address.city":"Bangalore"});
 
 
 
+Linking Style 
+
+Trainer 
+
+_id,tname,tech,students:[{},{},{}]
+
+Student 
+_id,sname,age,trainer:{}
+
+Trainer Details 
+1	Raj		Java			handle Reeta and Meeta 
+2	Ravi		Python 		handle Leeta, Veeta
+3	John		React Js		not handling any student 
+
+Student Details 
+100	Reeta	21			Belong to Raj Trainer 
+101	Meeta	22			Belong to Raj Trainer 
+102	Leeta		23			Belong to Ravi Trainer 
+103	Veeta	24			Belong to Ravi Trainer 
+104	Keeta	25			not a part of any batch 
 
 
+
+Inside Trainer we can store more than one student details 
+Store in Student1 5 documents 
+
+	db.Student1.insertOne({_id:100,sname:"Reeta",age:21});
+	db.Student1.insertOne({_id:101,sname:"Meeta",age:22});
+db.Student1.insertOne({_id:102,sname:"Leeta",age:23});
+db.Student1.insertOne({_id:103,sname:"Veeta",age:24});
+db.Student1.insertOne({_id:104,sname:"Keeta",age:25});
+
+View all Student1 details 
+
+db.Student1.find();
+
+db.Trainer1.insertOne({_id:1,tname:"Raj",tech:"Java",students:[db.Student1.findOne({_id:100}),db.Student1.findOne({_id:101})]});
+db.Trainer1.insertOne({_id:2,tname:"Ravi",tech:"Python",students:[db.Student1.findOne({_id:102}),db.Student1.findOne({_id:103})]});
+db.Trainer1.insertOne({_id:3,tname:"John",tech:"React JS",students:[]})
+
+to View all Trainer1 details 
+
+Inside Student we can store Trainer details. 
+
+
+db.Trainer2.insertOne({_id:1,tname:"Raj",tech:"Java"})
+db.Trainer2.insertOne({_id:2,tname:"Ravi",tech:"Python"})
+db.Trainer2.insertOne({_id:3,tname:"John",tech:"React JS"})
+
+View all Trainer2 details 
+
+db.Trainer2.find();
+
+
+db.Student2.insertOne({_id:100,sname:"Reeta",age:21,trainer:db.Trainer2.findOne({_id:1})});
+db.Student2.insertOne({_id:101,sname:"Meeta",age:22,trainer:db.Trainer2.findOne({_id:1})});
+db.Student2.insertOne({_id:102,sname:"Leeta",age:23,trainer:db.Trainer2.findOne({_id:2})});
+db.Student2.insertOne({_id:103,sname:"Veeta",age:24,trainer:db.Trainer2.findOne({_id:2})});
+db.Student2.insertOne({_id:104,sname:"Keeta",age:25});
+
+View all Student2 details documents 
+
+db.Student2.find();
+
+
+ 
 
 
 
