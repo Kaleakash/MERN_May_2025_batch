@@ -1,5 +1,3 @@
---> Storing Array value in Mongo DB Simple example 
-
 Please connect mongo db 
 use mearn_2025_batch;
  db.Students.insertMany([
@@ -8,5 +6,20 @@ use mearn_2025_batch;
 {_id:3,sname:"Raj",age:23,skillset:["HTML","CSS","JavaScript"]},
 {_id:4,sname:"Steven",age:24,skillset:["Angular","ReactJS"]}
 ]);
+
+
 db.Students.find();
+
+search document details with array value conditions. 
+db.Students.find({skillset:"C"});
+
+Adding new value to array fields. 
+$push operator we need to use. 
+
+db.Students.updateMany({sname:"John"},{$push:{skillset:"React JS"}});
+$addToSet operator we need to use. It add only it not exits. 
+db.Students.updateMany({sname:"John"},{$addToSet:{skillset:"React JS"}});
+remove particular skillset 
+db.Students.updateMany({sname:"John"},{$pull:{skillset:"React JS"}});
+
 
