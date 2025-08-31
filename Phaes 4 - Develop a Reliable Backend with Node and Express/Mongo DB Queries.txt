@@ -138,9 +138,23 @@ filter the collection base upon category using
 2. aggregate 
 
 
-db.Products.find({category:"Electronics"});
+db.Products.find({category:"Electronics"});		like where clause 
 
-db.Products.aggregate([{$match:{category:"Electronics"}}]);
+db.Products.aggregate([{$match:{category:"Electronics"}}]);	having clause 
+
+combine more than one document base upon category or repeating value field 
+
+db.Products.aggregate([{$group:{_id:"$category"}}]);
+
+find sum,max,min,avg and count of all product group by category 
+db.Products.aggregate([{$group:{_id:"$category",totalPrice:{$sum:"$price"}}}]);
+db.Products.aggregate([{$group:{_id:"$category",maxPrice:{$max:"$price"}}}]);
+db.Products.aggregate([{$group:{_id:"$category",minPrice:{$min:"$price"}}}]);
+db.Products.aggregate([{$group:{_id:"$category",avgPrice:{$avg:"$price"}}}]);
+db.Products.aggregate([{$group:{_id:"$category",count:{$sum:1}}}]);
+
+
+db.Products.aggregate([{$match:{category:"Electronics"}},{$group:{_id:"$category"}}]);
 
 
 
