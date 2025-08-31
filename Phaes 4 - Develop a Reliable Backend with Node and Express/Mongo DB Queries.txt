@@ -118,6 +118,32 @@ db.Student2.find();
 
 
  
+Product collection 
+
+db.Products.insertMany([
+{_id:1,pname:"TV",category:"Electronics",price:56000,qty:10},
+{_id:2,pname:"Laptop",category:"Electronics",price:95000,qty:20},
+{_id:3,pname:"Shampo",category:"Health",price:100,qty:50},
+{_id:4,pname:"Toothpaste",category:"Health",price:500,qty:25},
+{_id:5,pname:"Computer",category:"Electronics",price:35000,qty:50}
+]);
+
+view all products collection details 
+
+db.Products.find();
+
+
+filter the collection base upon category using 
+1. find 
+2. aggregate 
+
+
+db.Products.find({category:"Electronics"});
+
+db.Products.aggregate([{$match:{category:"Electronics"}}]);
+
+
+
 
 
 
