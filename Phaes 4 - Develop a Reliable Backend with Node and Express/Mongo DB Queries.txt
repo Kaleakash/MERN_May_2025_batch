@@ -1,0 +1,12 @@
+--> Storing Array value in Mongo DB Simple example 
+
+Please connect mongo db 
+use mearn_2025_batch;
+ db.Students.insertMany([
+{_id:1,sname:"John",age:21,skillset:["Java","C","C++"]},
+{_id:2,sname:"Neena",age:22,skillset:["Python","C","C++"]},
+{_id:3,sname:"Raj",age:23,skillset:["HTML","CSS","JavaScript"]},
+{_id:4,sname:"Steven",age:24,skillset:["Angular","ReactJS"]}
+]);
+db.Students.find();
+
