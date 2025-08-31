@@ -23,3 +23,40 @@ remove particular skillset
 db.Students.updateMany({sname:"John"},{$pull:{skillset:"React JS"}});
 
 
+Embedded Style relationship 
+inside one document we are storing another document 
+
+db.EmployeeInfo.insertOne(
+{_id:100,name:"John",age:21,skillset:["Java","Python","React JS"],
+address:{city:"Bangalore",state:"Kar"},projects:[{pid:111,tech:"Java"},{pid:222,tech:"Python"},{pid:333,tech:"React JS"}]}
+);
+
+db.EmployeeInfo.insertOne(
+{_id:101,name:"Raj",age:23,skillset:["C"],
+address:{city:"Mumbai",state:"Mh"},projects:[{pid:444,tech:"C"}]}
+);
+
+db.EmployeeInfo.insertOne(
+{_id:102,name:"Lex",age:24,
+address:{city:"Bangalore",state:"Kar"}});
+
+View all documents from EmployeeInfo collection 
+
+db.EmployeeInfo.find();
+
+
+view specific document with embedded property 
+
+db.EmployeeInfo.find({"address.city":"Bangalore"});
+
+
+
+
+
+
+
+
+
+
+
+
