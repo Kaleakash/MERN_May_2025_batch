@@ -6,6 +6,7 @@ let data = "This is a sample text to be written to a file.";
 // 1. file name
 // 2. data to be written
 // 3. callback function which will be called after writing is done
+// line 10 to 16 is asynchronous
 fs.writeFile("sample.txt",data,(error)=> {
     if(error){
         console.log("Error in writing file",error);
