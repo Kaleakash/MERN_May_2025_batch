@@ -159,6 +159,38 @@ db.Products.aggregate([{$match:{category:"Electronics"}},{$group:{_id:"$category
 
 
 
+creating mongo db collection with validation rules 
+
+db.createCollection(collectionName,{validationRule});
+
+1. creating Employee1 need 3 field as name,salary,age etc 
+
+db.createCollection("Employee1",{
+	validator:{
+	$jsonSchema:{
+	bsonType:"object",
+	required:["name","salary","age"],
+	properties:{
+		name:{description: "name is required"},
+		salary:{description:"salary is required"},
+		age:{description:"age is required"}
+	}
+	}
+	},
+	validationLevel:"strict",
+	validationAction:"error"
+}); 
+
+then insert document in Employee1 collection 
+
+ db.Employee1.insertOne({name:"John",salary:45000,age:34});
+
+ db.Employee1.insertOne({name:"Raj",salary:46000});		Error 
+  
+ db.Employee1.insertOne({name:"Mahesh",salary:49000,age:"35abc"});
+
+
+
 
 
 
