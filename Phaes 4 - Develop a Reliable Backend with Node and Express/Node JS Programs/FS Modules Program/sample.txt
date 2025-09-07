@@ -1,1 +1,1 @@
-This is a sample text to be written to a file.
+Another sample data to be written to file

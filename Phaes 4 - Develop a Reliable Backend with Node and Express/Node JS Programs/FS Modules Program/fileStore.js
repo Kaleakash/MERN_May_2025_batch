@@ -1,6 +1,6 @@
 var fs = require("fs");
 console.log("fs module loaded");
-let data = "This is a sample text to be written to a file.";
+let data = "Another sample data to be written to file";
 // writeFile
 // takes 3 parameter 
 // 1. file name
