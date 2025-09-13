@@ -23,22 +23,24 @@ let server = http.createServer((request,response)=> {
 
     }
     
-    /*else if (urlRef.pathname == "/services") {
+    else if (urlRef.pathname == "/services") {
         
         let servicePage = fs.readFileSync("services.html"); //readFileSync is used to read the file synchronously
         response.write(servicePage);  
 
-    }else if(urlRef.pathname == "/SignIn"){
+    }
+    
+    else if(urlRef.pathname == "/SignIn"){
         let data = urlRef.query;    // extract query information from url
-       // console.log(data);
+        console.log(data);
        // check hard coding emailId and password for login
        
-    //    if(data.email == "akash@gmail.com" && data.password=="1234"){
-    //     response.write("<h1> Successfully login</h1>");
-    //    }else {
-    //     response.write("<h1> Failure try once again </h1>");
-    //    }
-
+        if(data.email == "akash@gmail.com" && data.password=="1234"){
+        response.write("<h1> Successfully login</h1>");
+       }else {
+     response.write("<h1> Failure try once again </h1>");
+     }
+     /*
         // checking emailId and password from login.json file.
         let loginsStringData = fs.readFileSync("login.json", "utf-8");
         let logins = JSON.parse(loginsStringData);  // convert string to json object. JSON.parse is used to convert string to json object.
@@ -53,9 +55,11 @@ let server = http.createServer((request,response)=> {
             let loginPage = fs.readFileSync("login.html");
             response.write(loginPage);
         }
-
+    */
         
-    }else if(urlRef.pathname == "/signUpPage"){
+    }
+    
+    /*else if(urlRef.pathname == "/signUpPage"){
        
         let signUpPage = fs.readFileSync("signup.html");
         response.write(signUpPage);
