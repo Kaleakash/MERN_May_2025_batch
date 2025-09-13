@@ -3,6 +3,7 @@ let url = require("url");
 // http://localhost:9090
 // http://localhost:9090/home
 let server = http.createServer((request,response)=> {
+    
     let urlRef = url.parse(request.url,true);
     response.writeHead(200,{"Content-Type":"text/html"});
     if(urlRef.pathname=="/home"){
