@@ -49,12 +49,12 @@ let server = http.createServer((request,response)=> {
         if(result!=undefined){
             response.write("<h1> Successfully login</h1>");
             response.write("<h3> Welcome user "+result.email+"</h3>");
-            //let dashboardPage = fs.readFileSync("dashboard.html");
-            //response.write(dashboardPage);
+            let dashboardPage = fs.readFileSync("dashboard.html");
+            response.write(dashboardPage);
         }else {
             response.write("<h1> Failure try once again </h1>");
-            //let loginPage = fs.readFileSync("login.html");
-            //response.write(loginPage);
+            let loginPage = fs.readFileSync("login.html");
+            response.write(loginPage);
         }
     
         
