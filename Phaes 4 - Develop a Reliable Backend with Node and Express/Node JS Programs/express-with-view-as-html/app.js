@@ -1,11 +1,12 @@
 let express = require('express');
-//let bodyParser = require('body-parser');    // body-parser is used to parse the incoming request body
+let bodyParser = require('body-parser');    
+// body-parser is used to parse the incoming request body
 let app = express();  // creating reference of express module
 
 
 
 // middleware to parse the incoming request body
-//app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));  // enable request body parsing for URL-encoded data
 
 // http://localhost:3000/               this open index.html page 
 
@@ -56,18 +57,18 @@ app.get("/signIn",(request,response)=> {
 
 // http://localhost:3000/sigIn   with post method with hard coding value check the login
 // in post method data send through request body part. 
-//app.post("/signIn",(request,response)=> {
-//    let data = request.body;
-    //console.log(request.query); // hold the query string value or form details
-    //console.log(data);
+app.post("/signIn",(request,response)=> {
+    let data = request.body;
+    console.log(request.query); // hold the query string value or form details
+    console.log(data);
     //response.send("Data received");
-//    if(data.emailId == "admin@gmail.com" && data.password == "admin@123")
-//  {
-//        response.send("Login successfully with post method");
-//    }else {
-//        response.send("Login fail, try once again with post method");
-//    }
-//});
+     if(data.emailId == "admin@gmail.com" && data.password == "admin@123")
+    {
+      response.send("Login successfully with post method");
+    }else {
+        response.send("Login fail, try once again with post method");
+    }
+});
 
 app.listen(3000, () => {
 console.log('Server is running on port 3000');
