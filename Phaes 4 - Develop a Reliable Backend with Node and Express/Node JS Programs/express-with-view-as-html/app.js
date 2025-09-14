@@ -41,18 +41,18 @@ app.get("/login", (request, response) => {
 
 // http://localhost:3000/sigIn   with get method with hard coding value check the login
 // in get method data will pass through URL 
-//app.get("/signIn",(request,response)=> {
-   // console.log(request)                // it hold the request details
-    //console.log(request.query); // hold the query string value or form details 
-//    let emailId = request.query.emailId;    // get the value from the query string
-//    let password = request.query.password;  // get the value from the query string
-//    if(emailId == "admin@gmail.com" && password == "admin@123")
-//    {
-//        response.send("Login successfully with get method");
-//    }else {
-//        response.send("Login fail, try once again with get method");
-//    }
-//})
+app.get("/signIn",(request,response)=> {
+        console.log(request)                // it hold the request details
+    console.log(request.query); // hold the query string value or form details for get method
+    let emailId = request.query.emailId;    // get the value from the query string
+     let password = request.query.password;  // get the value from the query string
+    if(emailId == "admin@gmail.com" && password == "admin@123")
+    {
+    response.send("Login successfully with get method");
+    }else {
+    response.send("Login fail, try once again with get method");
+    }
+})
 
 // http://localhost:3000/sigIn   with post method with hard coding value check the login
 // in post method data send through request body part. 
