@@ -59,4 +59,20 @@ app.post("/storeProduct",(request,response)=> {
     }
 })
 
+// update product price using pid 
+// http://localhost:3000/updateProductPrice
+// method : put 
+// data : {"pid":100,"price":55000}
+app.put("/updateProductPrice",(request,response)=> {
+    let product = request.body; // which contain pid and new price
+    // if product present it return that product index position else it return -1
+    let index = products.findIndex(p=>p.pid ===product.pid)
+    if(index==-1){
+    response.send("Product not found");
+    }else {
+        products[index].price = product.price;
+        response.send("Product price updated successfully");
+    }
+})
+
 app.listen(PORT, () =>console.log(`Server is running on http://localhost:${PORT}`));
