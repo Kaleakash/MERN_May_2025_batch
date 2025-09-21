@@ -19,4 +19,31 @@ mongodb.MongoClient.connect(MONGO_URI).then(client=>{
     console.log("Connected to Mongo db Database");
 }).catch(error=>console.error("Error while connecting to database:", error));
 
+
+
+// view all product from mongo db database using express
+// http://localhost:3000/viewProductsES5Style
+// method : get
+
+app.get("/viewProductsES5Style",(request,response)=> {
+    db.collection(COLLECTION_NAME).find().toArray().then(products=> {
+        response.json(products); // send the products array as JSON response
+    }).catch(error=> {
+        response.send(error)
+    })
+})
+// view all product from mongo db database using express
+// http://localhost:3000/viewProductsES6Style
+// method : get
+app.get("/viewProductsES6Style",async (request,response)=> {
+    // await use to make the code as synchronous
+    // await replaces the then() method of promise
+    try{
+    let products = await db.collection(COLLECTION_NAME).find().toArray();
+    response.json(products); // send the products array as JSON response
+    }catch(error) {
+        response.send(error.message)
+    }
+})
+
 app.listen(PORT,()=>console.log("Server started at port:",PORT));
