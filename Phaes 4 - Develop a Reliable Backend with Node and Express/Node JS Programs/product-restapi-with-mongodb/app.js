@@ -60,4 +60,26 @@ app.get("/searchProductById/:id",(request,response)=> {
     })
 })
 
+// update product price using _id from database. 
+// http://localhost:3000/updateProductPrice
+// method : put 
+// data : {_id:"64a7f0f5e1b1c8b1a1a1a1a", price:45000}
+app.put("/updateProductPrice",(request,response)=> {
+    let product = request.body; // get product data from request body _id and price
+    let id = new mongodb.ObjectId(product._id); // converting string id to ObjectId
+    let newPrice = product.price; // get new price from request body
+    db.collection("Products").updateOne({_id:id},{$set:{price:newPrice}}).then(result=> {
+        //response.send(result);
+        if(result.matchedCount==0){
+            response.send("Product not found with id: "+product._id);
+        }else if(result.modifiedCount==0){
+            response.send("Product price is already "+newPrice);
+        }else {
+            response.send("Product price updated successfully for id: "+product._id);
+        }
+    }).catch(error=> {
+        response.send(error)
+    })
+})
+
 app.listen(3000,()=>console.log("Server is running on port 3000"));  // start the server and listen on port 3000
