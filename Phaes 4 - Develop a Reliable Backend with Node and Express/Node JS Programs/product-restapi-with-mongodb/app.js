@@ -81,5 +81,20 @@ app.put("/updateProductPrice",(request,response)=> {
         response.send(error)
     })
 })
-
+// delete product using _id from database. 
+// http://localhost:3000/deleteProductUsingId/64a7f0f5e1b1c8b1a1a1a1a
+// method : delete 
+app.delete("/deleteProductUsingId/:id",(request,response)=> {
+    let id = new mongodb.ObjectId(request.params.id); // converting string id to ObjectId
+    db.collection("Products").deleteOne({_id:id}).then(result=> {
+        //response.send(result);
+        if(result.deletedCount==0){
+            response.send("Product not found with id: "+id);
+        }else {
+            response.send("Product deleted successfully with id: "+id);
+        }
+    }).catch(error=> {
+        response.send(error);
+    })
+})
 app.listen(3000,()=>console.log("Server is running on port 3000"));  // start the server and listen on port 3000
