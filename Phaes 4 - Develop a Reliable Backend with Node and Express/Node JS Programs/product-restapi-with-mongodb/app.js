@@ -32,4 +32,17 @@ app.post("/storeProduct",(request,response)=> {
     })
 }) 
 
+// view all product from mongo db database using express
+// http://localhost:3000/viewProducts
+// method : get
+
+app.get("/viewProducts",(request,response)=> {
+    db.collection("Products").find().toArray().then(products=> {
+        response.json(products); // send the products array as JSON response
+    }).catch(error=> {
+        response.send(error)
+    })
+})
+
+
 app.listen(3000,()=>console.log("Server is running on port 3000"));  // start the server and listen on port 3000
