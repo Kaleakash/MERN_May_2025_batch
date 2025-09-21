@@ -13,13 +13,15 @@ let products = [
 ]
 // Get All Products 
 // http://localhost:3000/products
+
 app.get("/products",(request,response)=> {
-    response.json(products);
+    response.json(products);        // it display data in json format
 })
 
 
 // search product using pid using query param technique 
 // http://localhost:3000/findProductUsingQueryParam?pid=100
+
 app.get("/findProductUsingQueryParam",(request,response)=> {
     let product_id = eval(request.query.pid);
     // if product present it return that product else it return undefined
@@ -75,4 +77,18 @@ app.put("/updateProductPrice",(request,response)=> {
     }
 })
 
+// delete product using pid
+// http://localhost:3000/deleteProduct/104   as path param
+// method : delete
+
+app.delete("/deleteProduct/:pid",(request,response)=> {
+    let pid = eval(request.params.pid);
+    let index = products.findIndex(p=>p.pid ===pid)
+    if(index==-1){
+    response.send("Product not present");
+    }else {
+        products.splice(index,1);//1st parameter index and 2nd parameter number of element to delete 
+        response.send("Product details deleted successfully");
+    }
+})
 app.listen(PORT, () =>console.log(`Server is running on http://localhost:${PORT}`));
