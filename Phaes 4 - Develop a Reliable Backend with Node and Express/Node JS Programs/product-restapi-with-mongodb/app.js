@@ -44,5 +44,20 @@ app.get("/viewProducts",(request,response)=> {
     })
 })
 
+// view product using _id ie product from mongo db database 
+// http://localhost:3000/searchProductById/
+// method : get 
+app.get("/searchProductById/:id",(request,response)=> {
+    let id = new mongodb.ObjectId(request.params.id); // converting string id to ObjectId
+    db.collection("Products").findOne({_id:id}).then(product=> {
+        if(product==null){
+                response.send("Product not found with id: "+id);
+        }else {
+              response.json(product); // send the product as JSON response
+        }
+    }).catch(error=> {
+        response.send(error)
+    })
+})
 
 app.listen(3000,()=>console.log("Server is running on port 3000"));  // start the server and listen on port 3000
