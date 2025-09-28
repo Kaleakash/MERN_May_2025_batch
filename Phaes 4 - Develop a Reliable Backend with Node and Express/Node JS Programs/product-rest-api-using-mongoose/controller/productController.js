@@ -99,6 +99,20 @@ let decrementProductByValue = async(request,response)=> {
     }
 }
 
+let deleteProductUsingPid = async(request,response)=> {
+    try{
+    let pid = request.params.pid;
+    let result  = await productRepository.deleteProductUsingPid(pid);
+    if(result.deletedCount==0){
+        response.send("product not present")
+    }else {
+        response.send("Product deleted successfully")
+    }
+    }catch(error){
+        response.send(error.message)
+        console.log("error generated")
+    }
+}
 
 module.exports = {storeProduct,
     findProducts,
@@ -106,5 +120,6 @@ module.exports = {storeProduct,
     findProductByPriceValue,
     updateProductPrice,
     incrementProductByValue,  
-    decrementProductByValue
+    decrementProductByValue,
+    deleteProductUsingPid
 }

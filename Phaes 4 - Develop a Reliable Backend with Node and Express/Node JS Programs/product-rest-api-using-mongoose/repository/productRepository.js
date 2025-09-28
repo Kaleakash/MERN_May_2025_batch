@@ -27,13 +27,18 @@ let incrementPriceByValue = async(incrementValue)=> {
 let decrementPriceByValue = async(decrementValue)=> {
     return await ProductModel.updateMany({},{$inc:{price:-decrementValue}})
 }
+let deleteProductUsingPid = async(pid)=> {
+    return await ProductModel.deleteOne({pid:pid});
+}
+
 module.exports = {storeProduct,
     findProducts,
     findProductById,
     findProductByPrice,
     updateProductPrice,
     incrementPriceByValue,
-    decrementPriceByValue
+    decrementPriceByValue,
+    deleteProductUsingPid
     }
 
 

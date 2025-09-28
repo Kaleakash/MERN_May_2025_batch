@@ -15,7 +15,7 @@ connectDB();
 // provide main path with custom middleware 
 // http://localhost:9090/product/*
 // user defined middleware 
-app.use("/product",productRouter);
+app.use("/product",productRouter)
 
 
 

@@ -12,5 +12,5 @@ router.get("/findProductByPrice/:price",productController.findProductByPriceValu
 router.put("/updateProductPrice",productController.updateProductPrice);
 router.put("/incrementProductPriceByValue/:incrementValue",productController.incrementProductByValue);
 router.put("/decrementProductPriceByValue/:decrementValue",productController.decrementProductByValue);
-
+router.delete("/deleteProductUsingPid/:pid",productController.deleteProductUsingPid);
 module.exports = router;
