@@ -9,5 +9,8 @@ router.post("/store",productController.storeProduct);
 router.get("/find",productController.findProducts);
 router.get("/findProductById/:pid",productController.findProductById);
 router.get("/findProductByPrice/:price",productController.findProductByPriceValue);
+router.put("/updateProductPrice",productController.updateProductPrice);
+router.put("/incrementProductPriceByValue/:incrementValue",productController.incrementProductByValue);
+router.put("/decrementProductPriceByValue/:decrementValue",productController.decrementProductByValue);
 
 module.exports = router;

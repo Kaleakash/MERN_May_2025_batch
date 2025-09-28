@@ -53,4 +53,58 @@ let findProductByPriceValue = async(request,response)=> {
 }
 
 
-module.exports = {storeProduct,findProducts,findProductById,findProductByPriceValue}
+let updateProductPrice = async(request,response)=> {
+    let product = request.body;
+    
+    try{
+    
+    let result  = await productRepository.updateProductPrice(product)
+    if(result.matchedCount==0){
+        response.send("Record not present with pid as "+product.pid+", So didn't update")
+    }else if(result.modifiedCount==0){
+        response.send("Record didn't update because old price and new price is same")
+    }else{
+        response.send("Record updated successfully");
+    }
+    
+
+    }catch(error){
+        response.send(error.message)
+    }
+}
+
+let incrementProductByValue = async(request,response)=> {
+    let incrementValue = eval(request.params.incrementValue);
+    console.log(incrementValue+100)
+    try{
+    
+    let result  = await productRepository.incrementPriceByValue(incrementValue);
+    response.send(result);
+
+    }catch(error){
+        response.send(error.message)
+    }
+}
+
+let decrementProductByValue = async(request,response)=> {
+    let decrementValue = eval(request.params.decrementValue);
+    
+    try{
+    
+    let result  = await productRepository.decrementPriceByValue(decrementValue)
+    response.send(result);
+
+    }catch(error){
+        response.send(error.message)
+    }
+}
+
+
+module.exports = {storeProduct,
+    findProducts,
+    findProductById,
+    findProductByPriceValue,
+    updateProductPrice,
+    incrementProductByValue,  
+    decrementProductByValue
+}
