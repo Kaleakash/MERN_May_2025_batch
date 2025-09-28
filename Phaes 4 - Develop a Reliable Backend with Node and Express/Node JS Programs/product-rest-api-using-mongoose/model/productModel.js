@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 mongoose.pluralize(null);           // it doesn't follow pluralize rule 
-
+// provide schema details 
 let productSchema  = new mongoose.Schema({
     pid: {
         type:Number,
@@ -20,6 +20,6 @@ let productSchema  = new mongoose.Schema({
         max:[50000,"Price must be <=50000"]
     }
 })
-// by default collection create with name as products
-let productModel = mongoose.model("ProductDetails",productSchema)
+// by default collection create with name as productdetails in lower case with s 
+let productModel = mongoose.model("ProductDetail",productSchema)
 module.exports= productModel;

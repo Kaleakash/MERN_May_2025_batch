@@ -6,5 +6,9 @@ let storeProduct = async(product)=> {
     return await p.save(); 
 }
 
+let findProducts = async()=> {
+    return await ProductModel.find();
+}
 
-module.exports = {storeProduct}
+
+module.exports = {storeProduct,findProducts}

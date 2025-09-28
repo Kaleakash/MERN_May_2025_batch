@@ -13,4 +13,16 @@ let storeProduct = async(request,response)=> {
     }
 }
 
-module.exports = {storeProduct}
+let findProducts = async(request,response)=> {
+
+    try{
+    
+    let result  = await productRepository.findProducts();
+    response.json(result)
+
+    }catch(error){
+        response.send(error.message)
+    }
+}
+
+module.exports = {storeProduct,findProducts}
