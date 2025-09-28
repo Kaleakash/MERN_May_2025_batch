@@ -10,5 +10,11 @@ let findProducts = async()=> {
     return await ProductModel.find();
 }
 
+let findProductById = async(pid)=> {
+    return await ProductModel.findOne({pid:pid})
+}
+let findProductByPrice = async(priceValue)=> {
+    return await ProductModel.find({price:{$gt:priceValue}})
+}
 
-module.exports = {storeProduct,findProducts}
+module.exports = {storeProduct,findProducts,findProductById,findProductByPrice}
