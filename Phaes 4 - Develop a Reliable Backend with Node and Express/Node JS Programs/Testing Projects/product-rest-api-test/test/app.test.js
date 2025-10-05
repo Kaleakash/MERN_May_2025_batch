@@ -1,8 +1,11 @@
 let app = require("../src/app")
 let chai = require("chai")
-let chaihttp = require("chai-http");
+let chaiHttp = require("chai-http");
 
-chai.use(chaihttp);    
+// If chaiHttp is undefined or does not work, try this:
+//chaiHttp = chaiHttp.default || chaiHttp;
+
+chai.use(chaiHttp);    
 
  // using middleware to enable test http methods 
 

@@ -1,4 +1,5 @@
 let express = require("express");
+
 let app = express();
 app.use(express.json());
 let products=[];
@@ -23,5 +24,4 @@ app.post("/store",(request,response)=>{
 } )
 app.listen(9090,()=>console.log("server running on port number 9090"))
 
-module.exports = app;
-
+module.exports=app;

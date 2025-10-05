@@ -13,10 +13,12 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
+  "devDependencies": {
     "chai": "^6.2.0",
     "chai-http": "^5.1.2",
-    "express": "^5.1.0",
     "mocha": "^11.7.4"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
