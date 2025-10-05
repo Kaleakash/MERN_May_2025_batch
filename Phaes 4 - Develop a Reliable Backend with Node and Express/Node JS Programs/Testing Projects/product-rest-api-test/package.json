@@ -1,0 +1,22 @@
+{
+  "name": "product-rest-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chai": "^6.2.0",
+    "chai-http": "^5.1.2",
+    "express": "^5.1.0",
+    "mocha": "^11.7.4"
+  }
+}
