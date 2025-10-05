@@ -14,11 +14,11 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "chai": "^6.2.0",
     "chai-http": "^5.1.2",
     "mocha": "^11.7.4"
   },
   "dependencies": {
+    "chai": "^6.2.0",
     "express": "^5.1.0"
   }
 }
