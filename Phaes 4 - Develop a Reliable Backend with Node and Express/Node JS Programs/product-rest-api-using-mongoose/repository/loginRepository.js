@@ -18,7 +18,9 @@ let signIn = async(login)=> {
         let hashPassword = UserFromDb.password;         // hash format receive from db. 
         let isMatch = await PasswordHash.checkPassword(actualTextPassword,hashPassword);
         if(isMatch){
-            let token = jwt.sign({emailId:UserFromDb.emailId},'TokenKey');
+            // payload contains emailId and role
+            let payload = {"emailId":UserFromDb.emailId,"typeOfUser":UserFromDb.typeOfUser};
+            let token = jwt.sign(payload,'TokenKey');
             console.log(token);
             if(login.typeOfUser==UserFromDb.typeOfUser && login.typeOfUser=="admin"){
                 return {"msg":"Admin Login Successfully","token":token}
