@@ -3,11 +3,13 @@ let app = express();
 let config = require("dotenv")
 config.configDotenv();
 let connectDB = require("./config/dbConfig.js");
+let cors = require("cors");     // load cors module 
 
 let loginRouter = require("./router/loginRouter.js");
 
 // middleware 
 app.use(express.json())
+app.use(cors());
 
 let PORT = process.env.PORT;
 
