@@ -7,3 +7,8 @@ export let loginSignIn = async (login)=> {
     return result.data;
 }
 
+export let loginSignUp = async (login)=> {
+    let result = await axios.post(LOGIN_BASE_URL+"/signUp",login)
+    return result.data;
+}
+

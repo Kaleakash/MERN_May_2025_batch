@@ -6,10 +6,12 @@ let signUp = async(request,response)=> {
     try{
     
     let result  = await loginRepository.signUp(login);
-    response.send(result);
-
+    //response.send(result);
+        if(result!=undefined){
+            response.json({msg:"Account created successfully"});
+        }
     }catch(error){
-        response.send(error.message)
+        response.json({msg:error.message})
     }
 }
 

@@ -17,9 +17,11 @@ let signIn=async (event)=> {
             alert("admin login successfully")
             setError("")
             navigate("adminDashboard")
+               sessionStorage.setItem("emailId",emailId);  //we store emailIf of that admin in session object. 
     }else if(serverOutput.msg=="Customer Login Successfully"){
             alert("customer login successfully")
             setError("")
+            sessionStorage.setItem("emailId",emailId);  //we store emailIf of that customer in session object. 
             navigate("customerDashboard")
     }else {
         setError(serverOutput.msg)
@@ -29,6 +31,9 @@ let signIn=async (event)=> {
     setPassword("");
 }
     
+let signUpPage= ()=> {
+    navigate("/signUp");
+}
     return (<div>
         <span style={{"color":"red"}}>{error}</span>
         <h2>Login Page</h2>
@@ -47,6 +52,8 @@ let signIn=async (event)=> {
             <input type="submit" value="SignIn"/>
             <input type="reset" value="reset"/>
         </form>
+        <br/>
+        <a href="#" onClick={signUpPage}>SignUp!</a>
     </div>)
 }
 
